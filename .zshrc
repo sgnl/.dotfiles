@@ -114,10 +114,15 @@ alias reloadzsh="source ~/.zshrc"
 #   see reference URL for more info
 #
 #
-alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias df='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dfa='dotfiles add'
+alias dfst='dotfiles status'
+alias dfcmsg='dotfiles commit'
 
 # NVM CONFIG
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# FZF: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
