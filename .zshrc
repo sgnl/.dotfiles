@@ -115,9 +115,18 @@ alias reloadzsh="source ~/.zshrc"
 #
 #
 alias df='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dfa='dotfiles add'
-alias dfst='dotfiles status'
-alias dfcmsg='dotfiles commit'
+alias dfa='df add'
+alias dfst='df status'
+alias dfcmsg='df commit'
+
+
+# Base16 Shell
+# reference: https://github.com/chriskempson/base16-shell
+#
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # NVM CONFIG
 export NVM_DIR="$HOME/.nvm"
