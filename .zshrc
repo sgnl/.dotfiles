@@ -8,7 +8,11 @@ export ZSH="/Users/_ray/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="theunraveler"
+#
+# git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
+ZSH_THEME="typewritten"
+export TYPEWRITTEN_PROMPT_LAYOUT="multiline"
+export TYPEWRITTEN_RIGHT_PROMPT_PREFIX="🍕 "
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -139,5 +143,9 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# custom bash scripts
+source ~/bash_scripts.sh
+
+# must be last?
 # FZF: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
