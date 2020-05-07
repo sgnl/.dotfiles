@@ -3,6 +3,7 @@ brew cask install firefox
 
 brew cask install iterm2
 brew cask install spectacle
+brew cask install maccy
 
 brew cask install sublime-text
 

@@ -12,7 +12,7 @@ export ZSH="/Users/_ray/.oh-my-zsh"
 # git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
 ZSH_THEME="typewritten"
 export TYPEWRITTEN_PROMPT_LAYOUT="multiline"
-export TYPEWRITTEN_RIGHT_PROMPT_PREFIX="🍕 "
+export TYPEWRITTEN_RIGHT_PROMPT_PREFIX="🎒 "
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,7 +72,7 @@ export TYPEWRITTEN_RIGHT_PROMPT_PREFIX="🍕 "
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx sublime direnv docker fzf npm nvm z zsh_reload)
+plugins=(git osx direnv fzf npm nvm z zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,12 +132,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-
-# Start tmux.
-if [[ -x "$(command -v tmux)" ]]; then
-    [ -z "$TMUX" ] && { tmux attach-session || exec tmux && exit; }
-fi
-
 # NVM CONFIG
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
@@ -149,3 +143,14 @@ source ~/bash_scripts.sh
 # must be last?
 # FZF: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Start tmux.
+if [[ -z "$TMUX" ]]; then
+  #statements
+  vared -p 'load into tmux, Y? ' -c start_tmux
+fi
+
+
+if [[ -x "$(command -v tmux)" && $start_tmux == "Y" || $start_tmux == "y" ]]; then
+  [ -z "$TMUX" ] && { tmux attach -t 🌊 || exec tmux new -s 🌊 && exit; }
+fi
